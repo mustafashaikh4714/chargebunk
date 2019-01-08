@@ -1,0 +1,124 @@
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">      
+                                                  <!-- [formGroup]="chargebunknetwork -->
+  <fieldset class='the-fieldset'>
+    <legend class='the-legend'>Charge Bunk Operator:</legend>
+    <input type="hidden" name="chargeBunkOperatorId" [(ngModel)]='chargeBunkOperatorId' ngModel>
+    <!-- <input type="hidden" name="chargeBunkOwenerId" [(ngModel)]='chargeBunkOwenerId' ngModel>
+    <input type="hidden" name="chargeBunkId" [(ngModel)]='chargeBunkId' ngModel> -->
+    <div class="row mt-2">
+      <div class="col-md-10 offset-1">
+        <div class="form-group row">
+          <label class="col-md-1 col-form-label
+                ">Charge Bunk Network</label>
+          <div class="col-md-3">
+            <select name="chargeBunkOperatorName" ngModel id="" (change)='isitnew(networkV.value, "net")' #networkV class="form-control">
+              <option value="">All</option>
+              <option value="new1">new1</option>
+              <option value="new2">new2</option>
+              <option value="new">New</option>
+            </select>
+            <input type="text" ngModel required name='newNetwork' *ngIf='newNetwork' class="form-control mt-1">
+          </div>
+          <!-- <label class="col-md-1 col-form-label">charge Bunk Owner</label>
+          <div class="col-md-3">
+            <select name="chargebunkowner" ngModel (change)='isitnew(ownerV.value, "owner")' id="" #ownerV class="form-control">
+              <option value="">All</option>
+              <option value="xxxx">xxxx</option>
+              <option value="yyyy">yyyy</option>
+              <option value="zzzz">zzzz</option>
+              <option value="new">new</option>
+            </select>
+            <input type="text" ngModel required name='newOwner' *ngIf='newOwner' class="form-control mt-1">
+          </div>
+          <label class="col-md-1 col-form-label
+              ">Charge Bunk</label>
+          <div class="col-md-3">
+            <select name="chargebunk" ngModel (change)='isitnew(stationV.value, "station")' #stationV class="form-control">
+              <option value="">All</option>
+              <option value="xxxx">xxxx</option>
+              <option value="yyyy">yyyy</option>
+              <option value="zzzz">zzzz</option>
+              <option value="new">new</option>
+            </select>
+            <input type="text" ngModel name='newStation' *ngIf='newStation' class="form-control mt-1">
+          </div> -->
+        </div>
+        <div class="form-group row descriptionRow">
+          <label for="" class="col-md-1 col-form-label">Description</label>
+          <div class="col-md-6">
+            <textarea name="chargeBunkOperatorDescription" ngModel required rows="2" class="form-control"></textarea>
+          </div>
+        </div>
+      <fieldset ngModelGroup="address">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="d-flex justify-content-between form-group">
+              <label for="" class="col-form-label">House No</label>
+              <div class="my-auto">
+                <input type="text" name="houseNumber" ngModel required class="form-control-sm">
+              </div>
+            </div>
+            <div class="d-flex justify-content-between form-group">
+              <label for="" class="col-form-label">City</label>
+              <div class="my-auto">
+                <input type="text" name="city" ngModel required class="form-control-sm">
+              </div>
+            </div>
+            <div class="d-flex justify-content-between form-group">
+              <label for="" class="col-form-label">Lat</label>
+              <div class="my-auto">
+                <input type="text" name="lattitude" ngModel required class="form-control-sm">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="d-flex justify-content-between form-group">
+              <label for="" class="col-form-label">Street</label>
+              <div class="my-auto">
+                <input type="text" name="street" ngModel required class="form-control-sm">
+              </div>
+            </div>
+            <div class="d-flex justify-content-between form-group">
+              <label for="" class="col-form-label">State</label>
+              <div class="my-auto">
+                <input type="text" name="state" ngModel required class="form-control-sm">
+              </div>
+            </div>
+            <div class="d-flex justify-content-between form-group">
+              <label for="" class="col-form-label">Long</label>
+              <div class="my-auto">
+                <input type="text" name="longitude" ngModel required class="form-control-sm">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="d-flex justify-content-between form-group">
+              <label for="" class="col-form-label">Zip</label>
+              <div class="my-auto">
+                <input type="text" name="zipCode" ngModel required class="form-control-sm">
+              </div>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+        <div class="form-group row">
+          <label for="" class="col-md-3 col-form-label col-form-label-md">Hours of operation</label>
+          <div class="col-md-6">
+            <textarea name="operation" readonly rows="3" class="form-control" style='font-size: 12px; overflow: hidden;'>
+              MON-FRI: 6:00 AM to 10:00 PM
+              SAT: 6:00 AM to 8:00 PM
+              SUN: 8:00 AM to 5:00 PM
+            </textarea>
+          </div>
+        </div>
+        <div class="d-flex justify-content-around mt-3">
+          <span ngbTooltip="{{f.valid?'':'Enter Valid Form Details'}}" class='w-25'>
+            <button type="submit" [disabled]="!f.valid" class="btn btn-outline-success w-100">Save</button>
+          </span>
+          <button (click)="onCancel(f)" class="btn btn-outline-danger w-25">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+
+</form>

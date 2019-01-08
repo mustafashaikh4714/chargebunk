@@ -1,0 +1,19 @@
+import { Component } from '@angular/core';
+import { SummaryService } from './summary.service';
+import { DISABLED } from '@angular/forms/src/model';
+import { Button } from 'protractor';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  public isCollapsed = true;
+  constructor(public signinvalue: SummaryService) {
+  }
+
+  signout() {
+    this.signinvalue.login = false;
+  }
+}

@@ -1,0 +1,42 @@
+<div class="container">
+  <h2>Charge Bunk Operator Summary</h2>
+  <div class="row">
+   <div class="col-md-12 table-responsive">
+      <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>ChargeBunkOperator</th>
+              <!-- <th>ChargeBunkOwner</th>
+              <th>ChargeBunk</th> -->
+              <th>Description</th>
+              <th>House No</th>
+              <th>Street</th>
+              <th>Zip</th>
+              <th>City</th>
+              <th>State</th>
+              <th>Latitude</th>
+              <th>Longitude</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor = "let x of networks;let i=index">
+                <th>{{i+1}}</th>
+                <td scope="col">{{x.chargeBunkOperatorName}}</td>
+                <!-- <td scope="col">{{x.chargebunkowner}}</td> -->
+                <!-- <td scope="col">{{x.chargebunk}}</td> -->
+                <td scope="col">{{x.chargeBunkOperatorDescription}}</td>
+                <td scope="col">{{x.houseNumber}}</td>
+                <td scope="col">{{x.street}}</td>
+                <td scope="col">{{x.zipCode}}</td>
+                <td scope="col">{{x.city}}</td>
+                <td scope="col">{{x.state}}</td>
+                <td scope="col">{{x.lattitude}}</td>
+                <td scope="col">{{x.longitude}}</td>
+              </tr>
+          </tbody>
+        </table>
+   </div>   
+  </div>
+</div>

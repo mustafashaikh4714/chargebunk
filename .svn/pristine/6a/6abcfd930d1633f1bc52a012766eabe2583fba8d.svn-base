@@ -1,0 +1,84 @@
+<!-- div.row>div.col-md-4*2+div.col-md-2*2 -->
+<div class="row mb-4">
+  <div class="col-md-4">
+    <div class="card heading-card">
+      <div class="card-header">
+        Featured
+      </div>
+      
+    </div>
+  </div>
+  <div class="col-md-4">
+      
+    <div class="my-auto">
+      <input type="text" name="state" ngModel required class="form-control">
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-4">
+    <div class="card">
+      <div class="card-header"> configuration key</div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">allowofflinetxforunknownid</li>
+        <li class="list-group-item">autharization cache enabled</li>
+        <li class="list-group-item">authorizeremotetextrequest</li>
+        <li class="list-group-item">blinkrequest</li>
+        <li class="list-group-item">clockaligneddatainterval</li>
+        <li class="list-group-item">connectiontimeout</li>
+        <li class="list-group-item">getconfigurationmaxkeys</li>
+        <li class="list-group-item">heartbeatinterval</li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card" >
+      <div class="card-header"> configuration key</div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">charger supports unknownofffline auothirazition</li>
+        <li class="list-group-item">charger supports autharization cache</li>
+        <li class="list-group-item">charger alows remote transaction</li>
+        <li class="list-group-item">no of times to blink charge point lighting when signaling</li>
+        <li class="list-group-item">seconds of clock aligned interval data for meter reporting</li>
+        <li class="list-group-item">time in secons from sucessful autharization untill charging cable is insertedin the car.if  time expires authorization is cancelled</li>
+        <li class="list-group-item">max number of requested configuration keys the charger returns in  response to get configuration </li>
+        <li class="list-group-item">interval after which charger sends a heat beat message</li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-md-2">
+    <div class="card">
+      <div class="card-header"> writeable</div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">rw</li>
+        <li class="list-group-item">rw</li>
+        <li class="list-group-item">rw</li>
+        <li class="list-group-item">rw</li>
+        <li class="list-group-item">rw</li>
+        <li class="list-group-item">rw</li>
+        <li class="list-group-item">r</li>
+        <li class="list-group-item">rw</li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-md-2">
+    <div class="card">
+      <div class="card-header"> keyvalue</div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">true</li>
+        <li class="list-group-item">false</li>
+        <li class="list-group-item">true</li>
+        <li class="list-group-item">3</li>
+        <li class="list-group-item">900</li>
+        <li class="list-group-item">60</li>
+        <li class="list-group-item"></li>
+        <li class="list-group-item">60</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="d-flex justify-content-around mt-3">
+    <button class="btn btn-outline-success w-25">save</button>
+    <!-- [disabled] = "!f.valid" -->
+    <button (click)="onCancel(f)" class="btn btn-outline-danger w-25">copy to group</button>
+  </div>

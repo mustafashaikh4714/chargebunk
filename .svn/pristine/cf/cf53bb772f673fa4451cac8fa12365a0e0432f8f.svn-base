@@ -1,0 +1,16 @@
+
+.descriptionRow label{
+    flex: 0 0 11.333333%;
+    max-width: 11.333333%;
+}
+
+    
+.dayLight {
+    width: 40%;
+}
+
+@media only screen and (max-width: 768px) {
+    .dayLight {
+        width: 100%;
+    }
+}

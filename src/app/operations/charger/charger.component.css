@@ -1,0 +1,33 @@
+
+
+.chargerSelect .custom-select{
+    width: 75%;
+}
+
+.moreCharder-details {
+    border: 1px solid #dee2e6 !important;
+    padding: 2rem 15px;
+    
+}
+.connectors{
+   margin-right: 10px;
+}
+
+.moreCharder-details >div {
+    margin-bottom: 10px;
+}
+@media only screen and (max-width: 768px) {
+    .chargerRow {
+        margin-right: 0;
+    }
+    .cargerRRow {
+        margin-right: 10px;
+        
+    }
+    .cargerRRow .d-flex {
+        display: block !important;
+    }
+    .moreCharder-details:last-child {
+        margin-left: 0;
+    }
+} 

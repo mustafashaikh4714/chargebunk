@@ -1,0 +1,4 @@
+export class ChargerSummmary {
+    constructor(public chargeBunkOperatorName:string,public chargebunkowner:string,public chargebunk:string, public id:number, public connectors:string, public type:string, public status:string, public authentication_key:string, public date:string) {}
+    
+}

@@ -1,0 +1,67 @@
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { SummaryService } from '../../summary.service';
+import { NgForm } from '@angular/forms';
+
+@Component({
+  selector: 'app-owner',
+  templateUrl: './owner.component.html',
+  styleUrls: ['./owner.component.css']
+})
+export class OwnerComponent implements OnInit {
+  @ViewChild('f') myForm: NgForm
+  newNetwork = false;
+  newOwner = false;
+  newStation = false;
+
+
+  constructor(private summaryService:SummaryService) { }
+
+
+  ngOnInit() {
+  }
+
+  isitnew(e, itis) {
+    console.log(e, itis);
+    switch (itis) {
+      case 'network':
+        (e === 'new') ? this.newNetwork = true : this.newNetwork = false;
+        break;
+      case 'owner':
+        (e === 'new') ? this.newOwner = true : this.newOwner = false; 
+        break;
+      case 'station':
+        (e === 'new') ? this.newStation = true : this.newStation = false;
+        break;
+      default:
+        break;
+    }
+  }
+
+onSubmit(form: NgForm) {
+
+  const value = form.value;
+ 
+  console.log(value);
+  this.summaryService.addOwnerSummary(value.network, value.owner, value.station, value.description, value.house, value.street,
+     value.zip, value.city, value.state, value.latitude, value.longitude, value.operation)
+
+  this.myForm.reset();
+}
+
+onCancel(form: NgForm) {
+  this.myForm.reset();
+//  const value = form.value;
+//  value.network = 'All';
+//  value.owner = 'All';
+//  value.station = 'All';
+//  value.description = '';
+//  value.house = '';
+//  value.street = '';
+//  value.state = '';
+//  value.zip = '';
+//  value.city = '';
+//  value.longitude = '';
+//  value.latitude = '';
+//  value.operation = '';
+}
+}

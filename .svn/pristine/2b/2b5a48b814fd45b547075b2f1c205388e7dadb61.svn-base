@@ -1,0 +1,138 @@
+<div>
+  <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <fieldset class='the-fieldset'>
+      <legend class='the-legend'></legend>
+      <div class="row mt-2">
+        <div class="col-md-10 offset-1">
+          <div class="form-group row">
+            <label class="col-md-1 col-form-label
+                  ">Network</label>
+            <div class="col-md-3">
+              <select name="network" ngModel id="" (change)='isitnew(networkV.value, "network")' #networkV class="form-control">
+                <option value="all">All</option>
+                <option value="new1">new1</option>
+                <option value="new2">new2</option>
+                <option value="new">New</option>
+              </select>
+              <input type="text" ngModel required name='newNetwork' *ngIf='newNetwork' class="form-control mt-1">
+            </div>
+            <label class="col-md-1 col-form-label">Owner</label>
+            <div class="col-md-3">
+              <select name="owner" ngModel (change)='isitnew(ownerV.value, "owner")' id="" #ownerV class="form-control">
+                <option value="">All</option>
+                <option value="xxxx">xxxx</option>
+                <option value="xxxx">yyyy</option>
+                <option value="xxxx">zzzz</option>
+                <option value="new">new</option>
+              </select>
+              <input type="text" ngModel required name='newOwner' *ngIf='newOwner' class="form-control mt-1">
+            </div>
+            <label class="col-md-1 col-form-label
+                ">Station</label>
+            <div class="col-md-3">
+              <select name="station" ngModel (change)='isitnew(stationV.value, "station")' id="" #stationV class="form-control">
+                <option value="all">All</option>
+                <option value="xxxx">xxxx</option>
+                <option value="xxxx">yyyy</option>
+                <option value="xxxx">zzzz</option>
+                <option value="new">new</option>
+              </select>
+              <input type="text" ngModel name='newStation' *ngIf='newStation' class="form-control mt-1">
+            </div>
+            <label class="col-md-1 col-form-label">Charger</label>
+            <div class="col-md-3">
+              <select name="owner" ngModel (change)='isitnew(charger.value, "owner")' id="" #ownerV class="form-control">
+                <option value="">All</option>
+                <option value="xxxx">xxxx</option>
+                <option value="xxxx">yyyy</option>
+                <option value="xxxx">zzzz</option>
+                <option value="new">new</option>
+              </select>
+              <input type="text" ngModel required name='newcharger' *ngIf='newcharger' class="form-control mt-1">
+            </div>
+            <label class="col-md-1 col-form-label">Charger Type</label>
+            <div class="col-md-3">
+              <select name="chargertype" ngModel (change)='isitnew(chargertype.value, "owner")' id="" #ownerV class="form-control">
+                <option value="">All</option>
+                <option value="xxxx">xxxx</option>
+                <option value="xxxx">yyyy</option>
+                <option value="xxxx">zzzz</option>
+                <option value="new">new</option>
+              </select>
+              <input type="text" ngModel required name='newOwner' *ngIf='newcharger' class="form-control mt-1">
+            </div>
+            <label class="col-md-1 col-form-label">manufacturer</label>
+            <div class="col-md-3">
+              <select name="GROUP" ngModel (change)='isitnew(groups.value, "owner")' id="" #ownerV class="form-control">
+                <option value="">All</option>
+                <option value="xxxx">xxxx</option>
+                <option value="xxxx">yyyy</option>
+                <option value="xxxx">zzzz</option>
+                <option value="new">new</option>
+              </select>
+              <input type="text" ngModel required name='newOwner' *ngIf='newOwner' class="form-control mt-1">
+            </div>
+            <label class="col-md-1 col-form-label">model</label>
+            <div class="col-md-3">
+              <select name="GROUP" ngModel (change)='isitnew(groups.value, "owner")' id="" #ownerV class="form-control">
+                <option value="">All</option>
+                <option value="xxxx">xxxx</option>
+                <option value="xxxx">yyyy</option>
+                <option value="xxxx">zzzz</option>
+                <option value="new">new</option>
+              </select>
+              <input type="text" ngModel required name='newOwner' *ngIf='newOwner' class="form-control mt-1">
+            </div>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+  
+
+  
+
+  <div>
+
+    <div class="col-md-4">
+      <div class="d-flex justify-content-between form-group">
+        <label for="" class="col-form-label">configuration group</label>
+        <div class="my-auto">
+          <input type="text" name="street" ngModel required class="form-control-sm">
+        </div>
+      </div>
+      <div class="d-flex justify-content-between form-group">
+        <label for="" class="col-form-label">Last configuration Read</label>
+        <div class="my-auto">
+          <input type="text" name="state" ngModel required class="form-control-sm">
+        </div>
+      </div>
+      <div class="d-flex justify-content-between form-group">
+          <label for="" class="col-form-label">Last Configurationwritten</label>
+          <div class="my-auto">
+            <input type="text" name="state" ngModel required class="form-control-sm">
+          </div>
+        </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>configuration key</th>
+                <th>key description</th>
+                <th>configured value</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex justify-content-around mt-3">
+      <button class="btn btn-outline-success w-25">configure</button>
+      <!-- [disabled] = "!f.valid" -->
+      <button (click)="onCancel(f)" class="btn btn-outline-danger w-25">back</button>
+    </div>
+  </div>
+</div>

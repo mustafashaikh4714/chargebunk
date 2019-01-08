@@ -1,0 +1,29 @@
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { SummaryService } from '../../summary.service';
+
+@Component({
+  selector: 'app-charger',
+  templateUrl: './charger.component.html',
+  styleUrls: ['./charger.component.css']
+})
+export class ChargerComponent  {
+@ViewChild('f') myForm:NgForm;
+date;
+  constructor(private summaryService:SummaryService) { }
+
+  onSubmit(form: NgForm) {
+
+    const value = form.value;
+    this.date = new Date();
+    var newDate = this.date.toString();
+    this.summaryService.addChargerSummary(value.id, value.connectors, value.type1, value.status, value.authentication, newDate )
+  
+    this.myForm.reset();
+  }
+
+  onCancel(form: NgForm) {
+    this.myForm.reset();
+  }
+
+}

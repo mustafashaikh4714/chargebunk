@@ -1,0 +1,9 @@
+
+
+.heading-card .card-header{
+    padding: 0.35rem 1.25rem;
+}
+.card{
+    overflow: auto;
+    max-height: 400px;
+}

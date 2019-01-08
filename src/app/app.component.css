@@ -1,0 +1,47 @@
+
+.navbar-nav li{
+    padding: 0 10px;
+    /* display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: arial; */
+    /* width: 20%; */
+    
+}
+.dataHere {
+    min-height: 500px;
+}
+.Operations .dropdown-toggle:after {
+    display: none;
+}
+#navbarSupportedContent {
+    max-width: 70%;
+    margin-right: auto;
+    margin-left: auto;
+        /* list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: rgb(31, 180, 98); */
+    /* background-color:#f1f1f1 ; */
+}
+
+.wrapper {
+    background: #f1f1f1;
+    /* height: 93vh; */
+    /* background-image: url('/assets/images/back1.png'); */
+}
+
+
+:host() ::ng-deep .table {
+    border: 1px solid #fff;
+}
+:host() ::ng-deep .table thead th {
+    border-bottom: 2px solid white;
+}
+
+:host() ::ng-deep .table th, :host() ::ng-deep .table td {
+    border-top: 1px solid #fff !important;
+    border: 1px solid #fff !important;
+}

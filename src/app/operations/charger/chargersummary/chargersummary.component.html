@@ -1,0 +1,173 @@
+<div class="container">
+
+
+  <h2>Charge Point Summary</h2>
+  <span> Current Time : {{time | date:'medium'}} </span>
+  <label class="col-md-1 col-form-label">{{chargers.date}}</label>
+  <div class="row">
+    <div class="col-md-12 table-responsive">
+      <table class="table">
+        <thead>
+          <!-- <tr>
+            <th>
+              <tr class='nodashf'>
+                <th>Network</th>
+              </tr>
+            </th>
+            <th>Station</th>
+            <th>Owner</th>
+            <th class='nodash'>Charger
+              <tr>
+                <th>name</th>
+                <th>type</th>
+                <th>config group</th>
+              </tr>
+            </th>
+            <th class='nodash'>Provisioning Status
+              <tr>
+                <th>status</th>
+                <th>last update</th>
+              </tr>
+            </th>
+
+            <th class='nodash'>Communication Status
+              <tr>
+                <th>status</th>
+                <th>last update</th>
+              </tr>
+            </th>
+            <th class='nodash'>Operation Status
+              <tr>
+                <th>status</th>
+                <th>last update</th>
+              </tr>
+            </th>
+            <th class='nodash'>Connector
+              <tr>
+                <th>type</th>
+                <th>no</th>
+              </tr>
+            </th>
+            <th class='nodash'>ev connectivity
+              <tr>
+                <th>status</th>
+                <th>last update</th>
+              </tr>
+            </th>
+</tr> -->
+
+          <!-- <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>config</th>
+            <th>status</th>
+            <th>last update</th>
+            <th>status</th>
+            <th>last update</th>
+            <th>status</th>
+            <th>last update</th>
+          </tr> -->
+          <tr>
+            <th rowspan="2">Charge Bunk Operator</th>
+            <th rowspan="2">Charge Bunk</th>
+            <th rowspan="2">Charge Bunk Owner</th>
+            <th colspan="3" rowspan="1" class='yesDash'>Charge Point</th>
+            <th colspan="2" rowspan="1" class='yesDash'>Provisioning Status</th>
+            <th colspan="2" rowspan="1" class='yesDash'>Communication Status</th>
+            <th colspan="2" rowspan="1" class='yesDash'>Operation Status</th>
+            <th colspan="2" rowspan="1" class='yesDash'>Connector</th>
+            <th colspan="2" rowspan="1" class='yesDash'>EV Connectivity</th>
+            <th rowspan="2" class='yesDash'>Protocol</th>
+            <th rowspan="2" class='yesDash'>Vendor</th>
+            <th rowspan="2" class='yesDash'>Model</th>
+            <th rowspan="2" class='yesDash'>Serial Number</th>
+            <th rowspan="2" class='yesDash'>Box Serial Number</th>
+            <th rowspan="2" class='yesDash'>Filmware Version</th>
+            <th rowspan="2" class='yesDash'>Fireware Update</th>
+            <th rowspan="2" class='yesDash'>Iccid</th>
+            <th rowspan="2" class='yesDash'>Meter Serial Number</th>
+            <th rowspan="2" class='yesDash'>Meter Type</th>
+            <th rowspan="2" class='yesDash'>Dignostic Status</th>
+            <th rowspan="2" class='yesDash'>Communication</th>
+            <th rowspan="2" class='yesDash'>Last Heatbeat</th>
+          </tr>
+          <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Config type</th>
+            <th>Status</th>
+            <th>Last Update</th>
+            <th>Status</th>
+            <th>Last Update</th>
+            <th>Status</th>
+            <th>Last Update</th>
+            <th>Type</th>
+            <th>No</th>
+            <th>Status</th>
+            <th>Last Update</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let charger of chargers;let i=index">
+
+            <td scope="col">{{charger.chargeBunkOperatorName}}</td>
+            <td scope="col">{{charger.chargebunk}}</td>
+            <td scope="col">{{charger.chargebunkowner}}</td>
+            <td scope="col">{{charger.chargebunk}}</td>
+            <td scope="col">{{charger.type}}</td>
+            <td scope="col">{{"config default"}}</td>
+            <td scope="col">{{'status'}}</td>
+            <td scope="col">{{charger.date}}</td>
+            <td scope="col">{{'status'}}</td>
+            <td scope="col">{{charger.date}}</td>
+
+            <td scope="col">{{'status'}}</td>
+            <td scope="col">{{charger.date}}</td>
+            <td scope="col">{{charger.type}}</td>
+            <td scope="col">{{'14'}}</td>
+            <td scope="col">{{'15'}}</td>
+            <td scope="col">{{charger.date}}</td>
+            <td scope="col">{{charger.protocol}}</td>
+            <td scope="col">{{charger.vendor}}</td>
+            <td scope="col">{{charger.model}}</td>
+            <td scope="col">{{charger.serial_number}}</td>
+            <td scope="col">{{charger.box_serial_number}}</td>
+            <td scope="col">{{charger.filmware_version}}</td>
+            <td scope="col">{{charger.iccid}}</td>
+            <td scope="col">{{charger.imsi}}</td>
+            <td scope="col">{{charger.meter_serial_number}}</td>
+            <td scope="col">{{charger.meter_type}}</td>
+            <td scope="col">{{charger.dignostic_status}}</td>
+            <td scope="col">{{charger.communication}}</td>
+            <td scope="col">{{charger.last_heatbeat}}</td>
+          </tr>
+          <tr>
+            <td scope="col">enmp1</td>
+            <td scope="col">evst1</td>
+            <td scope="col">own1</td>
+            <td scope="col">ch3</td>
+            <td scope="col">dc fast</td>
+            <td scope="col">default</td>
+            <td scope="col">accepted</td>
+            <td scope="col">date</td>
+            <td scope="col">ok/notok</td>
+
+            <td scope="col">date</td>
+            <td scope="col">ok</td>
+            <td scope="col">date</td>
+            <td scope="col">ccchademo</td>
+            <td scope="col">1</td>
+            <td scope="col">available</td>
+            <td>date</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="d-flex justify-content-around mt-3">
+    <button class="btn btn-outline-success w-25" routerLink="/charger">New</button>
+    <button class="btn btn-outline-primary w-25">
+      <a href="#">Import</a>
+    </button>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+<div class="container">
+  <h2>Charge Bunk Summary</h2>
+  <div class="row">
+   <div class="col-md-12 table-responsive">
+      <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Charge Point</th>
+              <th>Time Zone</th>
+              <th>Description</th>
+              <th>Daylight Saving</th>
+               <th>House No</th>
+              <th>Street</th>
+              <th>Zip</th>
+              <th>City</th>
+              <th>State</th>
+              <th>Latitude</th>
+              <th>Longitude</th>
+              <th>Website</th>
+              <!-- <th>Hours of Operation</th> -->
+              
+            </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor = "let stat of stations;let i=index">
+                <td>{{i+1}}</td>
+                <td scope="col">{{stat.station}}</td>
+                <td scope="col">{{stat.timezone}}</td>
+                <td scope="col">{{stat.description}}</td>
+                <td scope="col">{{stat.daylightsavings}}</td>
+                <td scope="col">{{stat.house}}</td>
+                <td scope="col">{{stat.street}}</td>
+                <td scope="col">{{stat.zip}}</td>
+                <td scope="col">{{stat.city}}</td>
+                <td scope="col">{{stat.state}}</td>
+                <td scope="col">{{stat.latitude}}</td>
+                <td scope="col">{{stat.longitude}}</td>
+                <td scope="col">{{stat.website}}</td>
+                <!-- <td scope="col">{{stat.operation}}</td> -->
+              </tr>
+          </tbody>
+        </table>
+   </div>   
+  </div>
+</div>

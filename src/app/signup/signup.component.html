@@ -1,0 +1,251 @@
+<!-- <p>
+  signup works!
+</p>
+<form class="needs-validation" [formGroup]='signUp' (ngSubmit)='registration()'>
+  <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="validationCustom01">First name</label>
+      <input type="text" class="form-control" formControlName='firstname' placeholder="First name">
+      <div *ngIf='signUp.get("firstname").invalid && (signUp.get("firstname").touched || signUp.get("firstname").dirty)'>
+        <div *ngIf='signUp.get("firstname").errors.required'>
+          Looks bad!
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="validationCustom02">Last name</label>
+      <input type="text" class="form-control" id="validationCustom02" placeholder="Last name">
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="validationCustomUsername">Username</label>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroupPrepend">@</span>
+        </div>
+        <input type="text" class="form-control" id="validationCustomUsername" placeholder="Username" aria-describedby="inputGroupPrepend">
+        <div class="invalid-feedback">
+          Please choose a username.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="validationCustompassword">Create Password</label>
+      <input type="password" class="form-control" id="validationCustompassword" placeholder="Enter Password">
+      <div class="invalid-feedback">
+        Enter valid password
+      </div>
+    </div>
+
+    <div class="col-md-4 mb-3">
+      <label for="validationCustompassword1">Confirm Password</label>
+      <input type="password" class="form-control" id="validationCustompassword1" placeholder="confirm Password">
+      <div class="invalid-feedback">
+        Enter Valid Password
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="validationCustompassword2">Mobile No</label>
+      <input type="text" class="form-control" id="validationCustompassword2" placeholder="Enter Mobile Number">
+      <div class="invalid-feedback">
+        Mobile Number Must be 10 Characters
+      </div>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="col-md-6 mb-3">
+      <label for="validationCustom03">City</label>
+      <input type="text" class="form-control" id="validationCustom03" placeholder="City">
+      <div class="invalid-feedback">
+        Please provide a valid city.
+      </div>
+    </div>
+    <div class="col-md-3 mb-3">
+      <label for="validationCustom04">State</label>
+      <input type="text" class="form-control" id="validationCustom04" placeholder="State">
+      <div class="invalid-feedback">
+        Please provide a valid state.
+      </div>
+    </div>
+    <div class="col-md-3 mb-3">
+      <label for="validationCustom05">Zip</label>
+      <input type="text" class="form-control" id="validationCustom05" placeholder="Zip">
+      <div class="invalid-feedback">
+        Please provide a valid zip.
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="invalidCheck">
+      <label class="form-check-label" for="invalidCheck">
+        Agree to terms and conditions
+      </label>
+      <div class="invalid-feedback">
+        You must agree before submitting.
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-primary" type="submit">Submit form</button>
+</form> -->
+<mat-card>
+<div class="container register">
+  <div class="row">
+    <div class="col-md-3 register-left">
+      <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="" />
+      <h3>Welcome</h3>
+      <p>You are 30 seconds away from earning your own money!</p>
+      <input type="submit" name="" routerLink='/signin' value="Login" />
+      <br/>
+    </div>
+    <div class="col-md-9 register-right">
+      <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Employee</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Hirer</a>
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+          <h3 class="register-heading">Apply as a Employee</h3>
+          <form action="" [formGroup]='signUp' (ngSubmit)='register()'>
+            <div class="row register-form">
+              <div class="col-md-7 mx-auto">
+                  <p class='text-danger' *ngIf='message'>{{message}}</p>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input type="text" class="form-control" formControlName='firstname' placeholder="First Name *" value="" />
+                  <div *ngIf='signUp.get("firstname").invalid && (signUp.get("firstname").touched || signUp.get("firstname").dirty)'>
+                    <div *ngIf='signUp.get("firstname").errors.required'>
+                      Looks bad!
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control"formControlName='lastname' placeholder="Last Name *" value="" />
+                  <div *ngIf='signUp.get("lastname").invalid && (signUp.get("lastname").touched || signUp.get("lastname").dirty)'>
+                    <div *ngIf='signUp.get("lastname").errors.required'>
+                      Looks bad!
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input type="password" class="form-control"formControlName='password' placeholder="Password *" value="" />
+                  <div *ngIf='signUp.get("password").invalid && (signUp.get("password").touched || signUp.get("password").dirty)'>
+                      <div *ngIf='signUp.get("password").errors.required'>
+                        Looks bad!
+                      </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                  <input type="password" class="form-control"formControlName='confirmpassword' placeholder="Confirm Password *" value="" />
+                  <div *ngIf='signUp.get("confirmpassword").invalid && (signUp.get("confirmpassword").touched || signUp.get("confirmpassword").dirty)'>
+                      <div *ngIf='signUp.get("confirmpassword").errors.required'>
+                        Looks bad!
+                      </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                  <div class="maxl">
+                    <label class="radio inline">
+                      <input type="radio" name="gender" value="male" checked>
+                      <span> Male </span>
+                    </label>
+                    <label class="radio inline">
+                      <input type="radio" name="gender" value="female">
+                      <span>Female </span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input type="email" class="form-control" formControlName='email' placeholder="Your Email *" value="" />
+                  <div *ngIf='signUp.get("email").invalid && (signUp.get("email").touched || signUp.get("email").dirty)'>
+                      <div *ngIf='signUp.get("email").errors.required'>
+                        Looks bad!
+                      </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                  <input type="text" minlength="10" maxlength="10" name="txtEmpPhone" formControlName='phonenumber' class="form-control" placeholder="Your Phone *" value=""
+                  />
+                  <div *ngIf='signUp.get("phonenumber").invalid && (signUp.get("phonenumber").touched || signUp.get("phonenumber").dirty)'>
+                      <div *ngIf='signUp.get("phonenumber").errors.required'>
+                        Looks bad!
+                      </div>
+                    </div>
+                </div>
+                <!-- <div class="form-group">
+                  <select class="form-control">
+                    <option class="hidden" selected disabled>Please select your Sequrity Question</option>
+                    <option>What is your Birthdate?</option>
+                    <option>What is Your old Phone Number</option>
+                    <option>What is your Pet Name?</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Enter Your Answer *" value="" />
+                </div> -->
+                <input type="submit" class="btnRegister" value="Register" />
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+          <h3 class="register-heading">Apply as a Hirer</h3>
+          <form action="">
+            <div class="row register-form">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="First Name *" value="" />
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Last Name *" value="" />
+                </div>
+                <div class="form-group">
+                  <input type="email" class="form-control" placeholder="Email *" value="" />
+                </div>
+                <div class="form-group">
+                  <input type="text" maxlength="10" minlength="10" class="form-control" placeholder="Phone *" value="" />
+                </div>
+
+
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input type="password" class="form-control" placeholder="Password *" value="" />
+                </div>
+                <div class="form-group">
+                  <input type="password" class="form-control" placeholder="Confirm Password *" value="" />
+                </div>
+                <div class="form-group">
+                  <select class="form-control">
+                    <option class="hidden" selected disabled>Please select your Sequrity Question</option>
+                    <option>What is your Birthdate?</option>
+                    <option>What is Your old Phone Number</option>
+                    <option>What is your Pet Name?</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="`Answer *" value="" />
+                </div>
+                <input type="submit" class="btnRegister" value="Register" />
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</mat-card>

@@ -1,0 +1,52 @@
+<div class="container">
+  <h2>Charge Bunk Owner Summary</h2>
+  <div class="row">
+   <div class="col-md-12 table-responsive">
+      <table class="table table-striped">
+          <thead>
+            <tr>
+              <!-- <th>charge Bunk Operator</th> -->
+              <th>#</th>
+              <th>ChargeBunkOwnerId</th>
+              <th>charge Bunk Owner</th>
+              <!-- <th>Charge Bunk</th> -->
+              <th>Description</th>
+              <th>House No</th>
+              <th>Street</th>
+              <th>Zip</th>
+              <th>City</th>
+              <th>State</th>
+              <th>Latitude</th>
+              <th>Longitude</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Website</th>
+              <th>Timestamp</th>
+
+            </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor = "let owner of owners;let i=index">
+                <th>{{i+1}}</th>
+                <!-- <td scope="col">{{owner.chargebunkoperator}}</td> -->
+                <td scope="col">{{owner.chargeBunkOwnerId}}</td>
+                <td scope="col">{{owner.chargebunkowner}}</td>
+                <!-- <td scope="col">{{owner.chargebunk}}</td> -->
+                <td scope="col">{{owner.description}}</td>
+                <td scope="col">{{owner.house}}</td>
+                <td scope="col">{{owner.street}}</td>
+                <td scope="col">{{owner.zip}}</td>
+                <td scope="col">{{owner.city}}</td>
+                <td scope="col">{{owner.state}}</td>
+                <td scope="col">{{owner.latitude}}</td>
+                <td scope="col">{{owner.longitude}}</td>
+                <td scope="col">{{owner.email}}</td>
+                <td scope="col">{{owner.phone}}</td>
+                <td scope="col">{{owner.website}}</td>
+                <td scope="col">{{owner.timestamp}}</td>
+              </tr>
+          </tbody>
+        </table>
+   </div>
+  </div>
+</div>

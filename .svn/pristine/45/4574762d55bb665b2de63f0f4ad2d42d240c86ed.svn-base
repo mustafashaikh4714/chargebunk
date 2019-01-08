@@ -1,0 +1,13 @@
+
+table tr th{
+    border: none;
+    vertical-align: middle;
+    border-right: 1px solid lightgray;
+    text-align: center;
+    /* padding-right: 0; */
+    /* padding-left: 0; */
+}
+.yesDash {
+    border-bottom: 1px solid lightgray !important;
+}
+

@@ -1,0 +1,90 @@
+import { NetworksummaryComponent } from './operations/network/networksummary/networksummary.component';
+import { ChargersummaryComponent } from './operations/charger/chargersummary/chargersummary.component';
+import { StationsummaryComponent } from './operations/station/stationsummary/stationsummary.component';
+
+import { SummaryService } from './summary.service';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import {MatCardModule} from '@angular/material/card';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
+import { DatamanagementComponent } from './datamanagement/datamanagement.component';
+import { OperationsComponent } from './operations/operations.component';
+import { SettingsComponent } from './settings/settings.component';
+import { NetworkComponent } from './operations/network/network.component';
+import { ChargerComponent } from './operations/charger/charger.component';
+import { StationComponent } from './operations/station/station.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {NgbButtonsModule,NgbDropdownModule,NgbTabsetModule, NgbDropdown, NgbDropdownConfig, NgbCollapseModule, NgbTooltipModule} from '@ng-bootstrap/ng-bootstrap';
+import { AboutComponent } from './about/about.component';
+import { SigninComponent } from './signin/signin.component';
+import { SignupComponent } from './signup/signup.component';
+import { SuccessfullyloggedoutComponent } from './successfullyloggedout/successfullyloggedout.component';
+import { ConfirmEqualValidatorDirective } from './signup/confirm-equal-validator.directive';
+import { OwnerComponent } from './operations/owner/owner.component';
+import { RequestdiagnoticsComponent } from './operations/requestdiagnotics/requestdiagnotics.component';
+import { ChargepointconfigurationComponent } from './operations/chargepointconfiguration/chargepointconfiguration.component';
+import { GroupconfigurationentryComponent } from './operations/groupconfigurationentry/groupconfigurationentry.component';
+import { ChargepointconfigurationviewComponent } from './operations/chargepointconfigurationview/chargepointconfigurationview.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LogsComponent } from './logs/logs.component';
+import { OwnersummaryComponent } from './operations/owner/ownersummary/ownersummary.component';
+import { CboregistrationComponent } from './cboregistration/cboregistration.component';
+import { CbwregistrationComponent } from './cbwregistration/cbwregistration.component';
+import { CbregistrationComponent } from './cbregistration/cbregistration.component';
+
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    DatamanagementComponent,
+    OperationsComponent,
+    SettingsComponent,
+    NetworkComponent,
+    ChargerComponent,
+    StationComponent,
+    AboutComponent,
+    NetworksummaryComponent,
+    ChargersummaryComponent,
+    StationsummaryComponent,
+    SigninComponent,
+    SignupComponent,
+    SuccessfullyloggedoutComponent,
+    ConfirmEqualValidatorDirective,
+    OwnerComponent,
+    
+    RequestdiagnoticsComponent,
+    ChargepointconfigurationComponent,
+    GroupconfigurationentryComponent,
+    ChargepointconfigurationviewComponent,
+    LogsComponent,
+    OwnersummaryComponent,
+    CboregistrationComponent,
+    CbwregistrationComponent,
+    CbregistrationComponent,
+    
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    NgbButtonsModule,
+    NgbTabsetModule,
+    NgbDropdownModule,
+    FormsModule,
+    NgbCollapseModule,
+    NgbTooltipModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatCardModule
+
+  ],
+  exports: [
+    NgbDropdown
+  ],
+  providers: [SummaryService],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }

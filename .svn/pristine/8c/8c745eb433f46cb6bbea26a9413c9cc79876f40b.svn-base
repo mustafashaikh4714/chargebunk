@@ -1,0 +1,259 @@
+
+
+<form (ngSubmit) = "onSubmit(f.value)" #f="ngForm" *ngIf='!reqSummary'>
+  <fieldset class='the-fieldset'>
+    <legend class='the-legend'>REQUEST DIAGNOTICS</legend>
+    <div class="row mt-2">
+      <div class="col-md-10 offset-1">
+        <div class="form-group row">
+          <label class="col-md-1 col-form-label
+              ">Network</label>
+          <div class="col-md-3">
+            <select name="network" ngModel
+            id="" 
+            (change)='isitnew(networkV.value, "network")' 
+            #networkV 
+            class="form-control">
+              <option value="all">All</option>
+              <option value="new1">new1</option>
+              <option value="new2">new2</option>
+              <option value="new">New</option>
+            </select>
+            <input type="text" ngModel required name='newNetwork' *ngIf='newNetwork' class="form-control mt-1">
+          </div>
+          <label class="col-md-1 col-form-label">Owner</label>
+          <div class="col-md-3">
+            <select name="owner" 
+            ngModel
+            (change)='isitnew(ownerV.value, "owner")' 
+            id="" 
+            #ownerV  
+            class="form-control">
+              <option value="">All</option>
+              <option value="xxxx">xxxx</option>
+              <option value="xxxx">yyyy</option>
+              <option value="xxxx">zzzz</option>
+              <option value="new">new</option>
+            </select>
+            <input type="text" ngModel required name='newOwner' *ngIf='newOwner' class="form-control mt-1">
+          </div>
+          <label class="col-md-1 col-form-label
+            ">Station</label>
+          <div class="col-md-3">
+            <select name="station" 
+            ngModel 
+            (change)='isitnew(stationV.value, "station")' 
+            id="" 
+            #stationV  
+            class="form-control">
+              <option value="all">All</option>
+              <option value="xxxx">xxxx</option>
+              <option value="xxxx">yyyy</option>
+              <option value="xxxx">zzzz</option>
+              <option value="new">new</option>
+            </select>
+            <input type="text" ngModel name='newStation' *ngIf='newStation' class="form-control mt-1">
+          </div>
+          <label class="col-md-1 col-form-label">Charger</label>
+          <div class="col-md-3">
+            <select name="charger" 
+            ngModel
+            (change)='isitnew(chargerv.value, "charger")' 
+            id="" 
+            #chargerV  
+            class="form-control">
+              <option value="">All</option>
+              <option value="xxxx">xxxx</option>
+              <option value="xxxx">yyyy</option>
+              <option value="xxxx">zzzz</option>
+              <option value="new">new</option>
+            </select>
+            <input type="text" ngModel required name='newcharger' *ngIf='newcharger' class="form-control mt-1">
+          </div>
+          <label class="col-md-1 col-form-label">Charger Type</label>
+          <div class="col-md-3">
+            <select name="chargertype" 
+            ngModel
+            (change)='isitnew(chargertype.value, "chargertype")' 
+            id="" 
+            #chargertypeV  
+            class="form-control">
+              <option value="">All</option>
+              <option value="xxxx">xxxx</option>
+              <option value="xxxx">yyyy</option>
+              <option value="xxxx">zzzz</option>
+              <option value="new">new</option>
+            </select>
+            <input type="text" ngModel required name='newcharger' *ngIf='newcharger' class="form-control mt-1">
+          </div>
+          <label class="col-md-1 col-form-label">Groups</label>
+          <div class="col-md-3">
+            <select name="groups" 
+            ngModel
+            (change)='isitnew(groups.value, "groups")' 
+            id="" 
+            #groupsV  
+            class="form-control">
+              <option value="">All</option>
+              <option value="xxxx">xxxx</option>
+              <option value="xxxx">yyyy</option>
+              <option value="xxxx">zzzz</option>
+              <option value="new">new</option>
+            </select>
+            <input type="text" ngModel required name='newgroups' *ngIf='newgroups' class="form-control mt-1">
+          </div>
+        </div>
+        <!-- <div class="form-group row descriptionRow">
+          <label for="" class="col-md-1 col-form-label">Description</label>
+          <div class="col-md-6">
+            <textarea name="description" 
+            ngModel 
+            required
+            rows="2" 
+            class="form-control"></textarea>
+          </div>
+        </div> -->
+        <div class="row">
+          <div class="col-md-4">
+            <div class="d-flex justify-content-between form-group">
+              <label for="" class="col-form-label">Start Date</label>
+              <div class="my-auto">
+                <input type="text" 
+                name = "startdate" 
+                ngModel 
+                required
+                class="form-control-sm">
+              </div>
+            </div>
+            <div class="d-flex justify-content-between form-group">
+              <label for="" class="col-form-label">Stop Date</label>
+              <div class="my-auto">
+                <input type="text" 
+                name = "stopdate" 
+                ngModel 
+                required
+                class="form-control-sm">
+              </div>
+            </div>
+            <div class="d-flex justify-content-between form-group">
+              <label for="" class="col-form-label">Number of retries</label>
+              <div class="my-auto">
+                <input type="text" 
+                name="retries" 
+                ngModel 
+                required
+                class="form-control-sm">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="d-flex justify-content-between form-group">
+              <label for="" class="col-form-label">Retry interval(sec)</label>
+              <div class="my-auto">
+                <input type="text" 
+                name="retryinterval" 
+                ngModel 
+                required
+                 class="form-control-sm">
+              </div>
+            </div>
+            
+            
+          </div>
+          
+        </div>
+       
+        <div class="d-flex justify-content-around mt-3">
+          <span ngbTooltip="{{f.valid?'':'Enter Valid Form Details'}}" class='w-25'>
+              <button type="submit" [disabled] = "!f.valid" class="btn btn-outline-success w-100">Send To Charger</button>
+          </span>
+            <button 
+            (click) = "onCancel(f)"
+            class="btn btn-outline-danger w-25">Cancel</button>
+          </div>
+      </div>
+    </div>
+  </fieldset>
+</form>
+
+
+
+<div class="container" *ngIf='reqSummary'>
+    <h2>Charge point diagnostics summary</h2>
+    <!-- <span> Current Time : {{time | date:'medium'}} </span>  -->
+    <!-- <label class="col-md-1 col-form-label">{{chargers.date}}</label> -->
+    <div class="row">
+      <div class="col-md-12 table-responsive">
+        <table class="table">
+          <thead>
+           
+            <tr>
+              <th rowspan="2">Network</th>
+              <th rowspan="2">Stations</th>
+              <th rowspan="2">Owner</th>
+              <th colspan="2" rowspan="1">Charger</th>              
+              <th colspan="2" rowspan="1">Operation Status</th>
+              <th colspan="9" rowspan="1" class='text-center'>Diagnotics</th>
+            </tr>
+            <tr rowspan="1">
+              <th>Name</th>
+              <th>Type</th>
+              <th>Status</th>
+              <th>Last Update</th>
+              <th>Get Diagnostics File</th>
+              <th>User</th>
+              <th>Time Stamp</th>
+              <th>Start Time</th>
+              <th>Stop Time</th>
+              <th> no of retries</th>
+              <th>Retryintervel(sec)</th>
+              <th>status</th>
+              <th>file Name</th>
+            </tr>
+          </thead>
+          <tbody>
+             <tr *ngFor='let req of requestSummary; let i = index'>
+              <!-- <td>{{i+1}}</td> -->
+              <td scope="col">{{req.network}}</td>
+              <td scope="col">{{req.station}}</td>
+              <td scope="col">{{req.owner}}</td>
+              <td scope="col">{{req.charger}}</td>
+              <td scope="col">{{req.chargertype}}</td>
+              <!-- <td scope="col">{{req.group}}></td> -->
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td scope="col">{{req.startdate}}</td>
+              <td scope="col">{{req.stopdate}}</td>
+              <td scope="col">{{req.retries}}</td>
+              <td scope="col">{{req.retryinterval}}</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td scope="col">enmp1</td>
+              <td scope="col">evst1</td>
+              <td scope="col">own1</td>
+              <td scope="col">ch3</td>
+              <td scope="col">dc fast</td>
+              <td scope="col">default</td>
+              <td scope="col">accepted</td>
+              <td scope="col">date</td>
+              <td scope="col">ok/notok</td>
+  
+              <td scope="col">date</td>
+              <td scope="col">ok</td>
+              <td scope="col">date</td>
+              <td scope="col">ccchademo</td>
+              <td scope="col">1</td>
+              <td scope="col">available</td>
+              <td>date</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    </div>
+    

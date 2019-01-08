@@ -1,0 +1,169 @@
+<form (ngSubmit) = "onSubmit(f)" #f = "ngForm">
+<fieldset class='the-fieldset'>
+  <legend class='the-legend'>Charge Point:</legend>
+  <div class="row mt-2 chargerRow">
+    <div class="col-md-10 offset-1">
+      <div class="row chargerSelect cargerRRow">
+        <div class="col-md-4">
+          <div class="d-flex justify-content-between form-group">
+            <label for="" class="col-form-label col-form-label-md">ID</label>
+            <div class="my-auto">
+              <input type="text" 
+              name="id" 
+              ngModel 
+              required 
+              class="form-control-sm">
+            </div>
+          </div>
+          <div class="d-flex justify-content-between form-group">
+            <label for="" class="col-form-label col-form-label-md connectors">Connectors</label>
+            <div class="my-auto">
+              <input type="text" 
+              name="connectors" 
+              ngModel
+              required 
+              class="form-control-sm">
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="d-flex justify-content-between form-group">
+            <label for="" class="col-form-label col-form-label-md">Type</label>
+            <select name="type1" 
+            ngModel 
+            required
+            id="" 
+            class="custom-select custom-select-sm">
+            <option value="all">All</option>
+            <option value="xxxx">xxxx</option>
+            <option value="yyyy">yyyy</option>
+            <option value="zzz">zzzz</option>            </select>
+          </div>
+          <div class="d-flex justify-content-between form-group">
+            <label for="" class="col-form-label col-form-label-md">Type</label>
+            <select name="type2" 
+            ngModel 
+            required
+            id="" class="custom-select custom-select-sm">
+            <option value="all">All</option>
+            <option value="xxxx">xxxx</option>
+            <option value="yyyy">yyyy</option>
+            <option value="zzz">zzzz</option>            </select>
+          </div>
+          <div class="d-flex justify-content-between form-group">
+            <label for="" class="col-form-label col-form-label-md">Type</label>
+            <select name="type3" 
+            ngModel 
+            required
+            id="" class="custom-select custom-select-sm">
+            <option value="all">All</option>
+            <option value="xxxx">xxxx</option>
+            <option value="yyyy">yyyy</option>
+            <option value="zzz">zzzz</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="d-flex justify-content-between form-group">
+            <label for="" class="col-form-label col-form-label-md">Status</label>
+            <select name="status" 
+            ngModel 
+            required 
+            id="" class="custom-select custom-select-sm">
+              <option value="all">All</option>
+              <option value="xxxx">xxxx</option>
+              <option value="yyyy">yyyy</option>
+              <option value="zzz">zzzz</option>
+              
+            </select>
+          </div>
+          <div class="d-flex justify-content-between form-group">
+            <label for="" class="col-form-label col-form-label-md">Autherization Key</label>
+           <input type="text" 
+           name="autherization" 
+           ngModel 
+           required>
+          </div>
+        </div>
+      </div>
+      <div class="row cargerRRow">
+        <div class="col-md-5 border moreCharder-details">
+          <div class="d-flex justify-content-between">
+            <label>Protocol</label>
+            <input type="text" 
+            required 
+            class="form-control-sm">
+          </div>
+          <div class="d-flex justify-content-between">
+            <label>Vendor</label>
+            <input type="text" required class="form-control-sm">
+          </div>
+          <div class="d-flex justify-content-between">
+            <label>Model</label>
+            <input type="text" required class="form-control-sm">
+          </div>
+          <div class="d-flex justify-content-between">
+            <label>Serial No.</label>
+            <input type="text" required class="form-control-sm">
+          </div>
+          <div class="d-flex justify-content-between">
+            <label>Box Serial No.</label>
+            <input type="text" required class="form-control-sm">
+          </div>
+          <div class="d-flex justify-content-between">
+            <label>Filmware Version</label>
+            <input type="text" required class="form-control-sm">
+          </div>
+          <div class="d-flex justify-content-between">
+            <label>Fireware update</label>
+            <input type="text" required class="form-control-sm">
+          </div>
+          <div class="col-md-12 justify-content-center d-flex">
+            <button class="btn btn-outline-primary w-50">Edit</button>
+          </div>
+
+        </div>
+        <div class="col-md-5 border moreCharder-details offset-1">
+          <div class="d-flex justify-content-between">
+            <label>Iccid</label>
+            <input type="text" class="form-control-sm">
+          </div>
+          <div class="d-flex justify-content-between">
+            <label>Imsi</label>
+            <input type="text" class="form-control-sm">
+          </div>
+          <div class="d-flex justify-content-between">
+            <label>Meter Serial No. </label>
+            <input type="text" class="form-control-sm">
+          </div>
+          <div class="d-flex justify-content-between">
+            <label>Meter Type</label>
+            <input type="text" class="form-control-sm">
+          </div>
+          <div class="d-flex justify-content-between">
+            <label>Diagnostic Status</label>
+            <input type="text" class="form-control-sm">
+          </div>
+          <div class="d-flex justify-content-between">
+            <label>Communication</label>
+            <input type="text" class="form-control-sm">
+          </div>
+          <div class="d-flex justify-content-between">
+            <label>Last Heatbeat</label>
+            <input type="text" class="form-control-sm">
+          </div>
+          <div class="col-md-12 justify-content-center d-flex">
+            <button class="btn btn-outline-primary w-50">Edit</button>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-around mt-3">
+        <button class="btn btn-outline-success w-25">Save</button>       <!-- [disabled] = "!f.valid" -->
+        <button 
+        (click) = "onCancel(f)"
+        class="btn btn-outline-danger w-25">Cancel</button>
+      </div>
+    </div>
+  </div>
+</fieldset>
+</form>

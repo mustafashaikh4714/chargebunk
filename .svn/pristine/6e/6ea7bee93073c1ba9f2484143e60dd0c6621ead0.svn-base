@@ -1,0 +1,139 @@
+import { StationSummary } from './station.summary.model';
+import { NetworkSummary } from './network.summary.model';
+import { ChargerSummmary } from './charger.summary.model';
+import { OwnerSummary } from './owner.summary.model';
+// import { OwnerSummary } from './operations/owner/ownersummary/owner.summary.model';
+export class SummaryService {
+    networkSummary:NetworkSummary[] = [];
+    stationSummary:StationSummary[] = [];
+    chargerSummary:ChargerSummmary[] = [];
+    ownerSummary:OwnerSummary[] =[];
+
+  public login = false;
+
+    getNetworkSummary() {
+        return this.networkSummary;
+    }
+
+    addNetworkSummary(net:string, own:string, st:string, desc:string, houseNo:number, str:string, zp:number, ct:string, stte:string,
+         lat:string, long:string, op:string) {
+     this.networkSummary.push({
+        network: net,
+        owner: own,
+        station: st,
+        description: desc,
+        house: houseNo,
+        street: str, 
+        zip: zp,
+        city: ct,
+        state: stte,
+        latitude: lat,
+        longitude: long,
+        operation: op
+     });
+    }
+    addStationSummary(time:string, daylightsaving:boolean, st:string, desc:string, houseNo:number, str:string, zp:number, ct:string, stte:string,
+        lat:string, long:string, op:string, website:string) {
+    this.stationSummary.push({
+       timezone: time,
+       daylightsavings: daylightsaving,
+       station: st,
+       description: desc,
+       house: houseNo,
+       street: str, 
+       zip: zp,
+       city: ct,
+       state: stte,
+       latitude: lat,
+       longitude: long,
+       operation: op,
+       website:website,
+    });
+  }
+
+     getStationSummary(){
+        return this.stationSummary;
+    }
+
+    getChargerSummary() {
+        return this.chargerSummary;
+    }
+    getOwnerSummary(){
+        return this.ownerSummary;
+    }
+
+    addOwnerSummary(net:string, own:string, st:string, desc:string, houseNo:number, str:string, zp:number, ct:string, stte:string,
+        lat:string, long:string, op:string, email:string){
+            this.ownerSummary.push({
+                network: net,
+                owner: own,
+                station: st,
+                description: desc,
+                house: houseNo,
+                street: str, 
+                zip: zp,
+                city: ct,
+                state: stte,
+                latitude: lat,
+                longitude: long,
+                operation: op,
+                email:email
+
+            })
+        }
+
+     addChargerSummary(i:number, conn:string, types:string, stat:string, auth:string, d:string) {
+        this.chargerSummary.push({
+            id: i,
+            connectors: conn,
+            type: types,
+            status: stat, 
+            authentication_key: auth,
+            date:d
+         });
+     }
+
+     getdate(){
+         return new Date();
+     }
+}
+
+
+
+
+
+
+
+
+
+
+//station details
+
+// station: 'st1',
+// timezone: 'utc+5:30',
+// description: 'Some dummy text here',
+// daylightsavings: '2Hrs',
+// house: 302,
+// street: 'Rajnagar001', 
+// zip: 10023,
+// city: 'Nasik',
+// state: 'Maharashtra',
+// latitude:'52.36',
+// longitude:'25.36',
+// operation: 'Again some dummy text here'
+
+
+//network details
+
+// network: 'Net1',
+// owner: 'Sai Krishna',
+// station: 'st1',
+// description: 'Some dummy text here',
+// house: 302,
+// street: 'Rajnagar001', 
+// zip: 10023,
+// city: 'Nasik',
+// state: 'Maharashtra',
+// latitude:'52.36',
+// longitude:'25.36',
+// operation: 'Again some dummy text here'

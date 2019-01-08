@@ -1,0 +1,191 @@
+<form (ngSubmit) = "onSubmit(f)" #f = "ngForm">
+<fieldset class='the-fieldset'>
+  <legend class='the-legend'>Charge Bunk</legend>
+  <div class="row mt-2">
+    <div class="col-md-10 offset-1">
+      <h5 class='justify-content-center d-flex'><b>Station entry</b></h5>
+      <div class="form-group row">
+        <label class="col-md-1 col-form-label">Station</label>
+        <div class="col-md-5">
+          <input type="text"
+          name="station"
+          ngModel
+          required
+          class="form-control">
+        </div>
+        <label class="col-md-1 col-form-label
+            ">Time Zone</label>
+        <div class="col-md-5">
+          <select
+          name="timezone"
+          ngModel
+          required
+          id="" class="form-control">
+            <option value="all">All</option>
+            <option value="xxxx">xxxx</option>
+            <option value="yyyy">yyyyy</option>
+            <option value="all">zzzz</option>
+
+
+          </select>
+        </div>
+      </div>
+      <div class="form-group row descriptionRow">
+        <label for="" class="col-md-1 col-form-label">Description</label>
+        <div class="col-md-5">
+          <textarea
+          name="description"
+          ngModel
+          rows="2"
+          required
+          class="form-control"></textarea>
+        </div>
+        <div class="d-flex justify-content-around dayLight">
+          <label for="exampleCheck1" class="form-check-label">Daylight Savings</label>
+          <div class="">
+            <input type="checkbox"
+            name="daylightsaving"
+            ngModel
+            required
+            class="form-check-input"
+            id="exampleCheck1">
+          </div>
+        </div>
+      </div>
+       <div class="row">
+        <div class="col-md-4">
+          <div class="d-flex justify-content-between form-group">
+            <label for="" class="col-form-label">House No</label>
+            <div class="my-auto">
+              <input type="text"
+              name="house"
+              ngModel
+              required
+              class="form-control-sm">
+            </div>
+          </div>
+          <div class="d-flex justify-content-between form-group">
+            <label for="" class="col-form-label">City</label>
+            <div class="my-auto">
+              <input type="text"
+              name="city"
+              ngModel
+              required
+              class="form-control-sm">
+            </div>
+          </div>
+          <div class="d-flex justify-content-between form-group">
+            <label for="" class="col-form-label">Lat</label>
+            <div class="my-auto">
+              <input type="text"
+              name="latitude"
+              ngModel
+              required
+              class="form-control-sm">
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="d-flex justify-content-between form-group">
+            <label for="" class="col-form-label">Street</label>
+            <div class="my-auto">
+              <input type="text"
+              name="street"
+              ngModel
+              required
+              class="form-control-sm">
+            </div>
+          </div>
+          <div class="d-flex justify-content-between form-group">
+            <label for="" class="col-form-label">State</label>
+            <div class="my-auto">
+              <input type="text"
+              name="state"
+              ngModel
+              required
+              class="form-control-sm">
+            </div>
+          </div>
+          <div class="d-flex justify-content-between form-group">
+            <label for="" class="col-form-label">Long</label>
+            <div class="my-auto">
+              <input type="text"
+              name="longitude"
+              ngModel
+              required
+              class="form-control-sm">
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="d-flex justify-content-between form-group">
+            <label for="" class="col-form-label">Zip</label>
+            <div class="my-auto">
+              <input type="text"
+              name="zip"
+              ngModel
+              required
+              class="form-control-sm">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+         <div class="col-md-4">
+          <div class="d-flex justify-content-between form-group">
+            <label for="" class="col-form-label">website</label>
+            <div class="my-auto">
+              <input type="text" name="website" ngModel required class="form-control-sm">
+            </div>
+          </div>
+         </div>
+      </div>
+
+      <div class="form-group row">
+          <label for="" class="col-md-3 col-form-label col-form-label-md">Hours of operation</label>
+          <div class="col-md-6">
+            <textarea name="operation"
+             readonly
+            rows="3"
+            class="form-control" style='font-size: 12px; overflow: hidden;'>
+            MON-FRI: 6:00 AM to 10:00 PM
+            SAT: 6:00 AM to 8:00 PM
+            SUN: 8:00 AM to 5:00 PM
+          </textarea>
+          </div>
+        </div>
+      <!-- <div class="form-group row">
+        <label for="" class="col-md-3 col-form-label col-form-label-md">Website</label>
+        <div class="col-md-6">
+            <div class="my-auto">
+                <input type="text"
+                name="website"
+                ngModel
+                required
+                class="form-control-sm">
+              </div> -->
+          <!-- <a href='www.google.com' title='website'>http://www.google.com</a> -->
+          <!-- <div class="row">
+        <div class="col-md-4">
+          <div class="d-flex justify-content-between form-group">
+            <label for="" class="col-form-label">House No</label>
+            <div class="my-auto">
+              <input type="text"
+              name="house"
+              ngModel
+              required
+              class="form-control-sm">
+            </div>
+          </div> -->
+        <!-- </div>
+      </div> -->
+      <div class="d-flex justify-content-around mt-3">
+        <button class="btn btn-outline-success w-25">Save</button>       <!-- [disabled] = "!f.valid" -->
+        <button
+        (click) = "onCancel(f)"
+        class="btn btn-outline-danger w-25">Cancel</button>
+      </div>
+    </div>
+  </div>
+</fieldset>
+</form>

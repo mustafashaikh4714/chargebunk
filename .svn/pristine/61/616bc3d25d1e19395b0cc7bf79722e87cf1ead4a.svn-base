@@ -1,0 +1,42 @@
+<div class="container">
+  <h2>Charge Bunk Owner Summary</h2>
+  <div class="row">
+   <div class="col-md-12 table-responsive">
+      <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Network</th>
+              <th>Owner</th>
+              <th>Station</th>
+              <th>Description</th>
+              <th>House No</th>
+              <th>Street</th>
+              <th>Zip</th>
+              <th>City</th>
+              <th>State</th>
+              <th>Latitude</th>
+              <th>Longitude</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor = "let owner of owners;let i=index">
+                <th>{{i+1}}</th>
+                <td scope="col">{{owner.network}}</td>
+                <td scope="col">{{owner.owner}}</td>
+                <td scope="col">{{owner.station}}</td>
+                <td scope="col">{{owner.description}}</td>
+                <td scope="col">{{owner.house}}</td>
+                <td scope="col">{{owner.street}}</td>
+                <td scope="col">{{owner.zip}}</td>
+                <td scope="col">{{owner.city}}</td>
+                <td scope="col">{{owner.state}}</td>
+                <td scope="col">{{owner.latitude}}</td>
+                <td scope="col">{{owner.longitude}}</td>
+              </tr>
+          </tbody>
+        </table>
+   </div>   
+  </div>
+</div>

@@ -1,0 +1,86 @@
+<div class="container-fluid p-0">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+    <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" [ngbCollapse]="isCollapsed">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink='/'>Home
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink='datamanagement'>Data Management</a>
+        </li>
+        <li class="nav-item my-auto Operations">
+          <div ngbDropdown class="d-inline-block" #myDrop="ngbDropdown">
+            <!-- <button class="btn btn-outline-primary" id="dropdownBasic1" >Toggle dropdown</button> -->
+            <a ngbDropdownToggle (mouseenter)='$event.stopPropagation(); myDrop.open();'>Operations</a>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1" (mouseleave)='$event.stopPropagation(); myDrop.close();'>
+              <button class="dropdown-item" routerLink='/network'>CBO</button>
+              <button class="dropdown-item" routerLink='/charger'>CP</button>
+              <button class="dropdown-item" routerLink='/station'>CB</button>
+              <button class="dropdown-item" routerLink='/owner'>CBW</button>
+              <button class="dropdown-item" routerLink='/requestdiagnotics'>requestdiagnotics</button>
+              <button class="dropdown-item" routerLink='/chargepointconfiguration'>chargepointconfiguration</button>
+              <button class="dropdown-item" routerLink='/groupconfigurationentry'>groupconfigurationentry</button>
+              <button class="dropdown-item" routerLink='/chargepointconfigurationview'>chargepointconfigurationview</button>
+              <button class="dropdown-item">
+                <div #myDrop2="ngbDropdown" ngbDropdown placement='right-top'>
+                  <a ngbDropdownToggle (mouseenter)='$event.stopPropagation(); myDrop2.open();'>Summary</a>
+                  <div ngbDropdownMenu aria-labelledby="dropdownBasic1" (mouseleave)='$event.stopPropagation(); myDrop2.close();'>
+                    <button class="dropdown-item" routerLink='/network/networksummary'>CBO Summary</button>
+                    <button class="dropdown-item" routerLink='/charger/chargersummary'>CP Summary</button>
+                    <button class="dropdown-item" routerLink='/station/stationsummary'>CB Summary</button>
+                    <button class="dropdown-item" routerLink='/owner/ownersummary'>CBW Summary</button>
+
+                  </div>
+                </div>
+              </button>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink='settings'>Settings</a>
+        </li>
+        <li class="nav-item ">
+          <!-- <div ngbDropdown class="d-inline-block" #myLogDrop="ngbDropdown">
+                <a ngbDropdownToggle (mouseenter)='$event.stopPropagation(); myLogDrop.open();'>logs</a>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1" (mouseleave)='$event.stopPropagation(); '>
+                    <button class="dropdown-item" routerLink='networksummary'>Network summary</button>
+                    <button class="dropdown-item" routerLink='chargersummary'>Charger summary</button>
+                    <button class="dropdown-item" routerLink='stationsummary'>Station summary</button>
+                  </div>
+                </div> -->
+          <a class="nav-link" routerLink='logs'>Logs</a>
+
+
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink='about'>About</a>
+        </li>
+
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="signin">Sign in</button> -->
+        <a *ngIf="signinvalue.login === false" class="nav-link" routerLink='signin'>sign in</a>
+        <a *ngIf="signinvalue.login === true" class="nav-link" routerLink='loggedout' (click)="signout()">signout</a>
+        <a *ngIf="signinvalue.login === false" class="nav-link" routerLink='signup'>sign up</a>
+
+
+      </form>
+    </div>
+  </nav>
+</div>
+<div class="wrapper">
+  <div class="container dataHere">
+    <div class="row">
+      <div class="col-md-12 mt-5">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>
